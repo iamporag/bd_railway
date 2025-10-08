@@ -12,10 +12,12 @@ class BdRailway extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
-          BlocProvider(create: (context)=> SplashScreenCubit()..StartSplashScreen()),
-          BlocProvider(create: (context)=> OnboardingBloc()),
+          BlocProvider(
+              create: (context) => SplashScreenCubit()..StartSplashScreen()),
+          BlocProvider(create: (context) => OnboardingBloc()),
         ],
         child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
           themeMode: ThemeMode.light,
           theme: AppTheme.APP_THEME_LIGHT,
           darkTheme: AppTheme.APP_THEME_DARK,
